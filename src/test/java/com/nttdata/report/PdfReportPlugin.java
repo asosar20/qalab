@@ -44,9 +44,6 @@ public class PdfReportPlugin implements EventListener {
             "@loginInvalido", "Caso 2: Usuario y contraseña inválidos",
             "@categoriaInexistente", "Caso 3: Categoría inexistente");
     private static final Set<String> NEGATIVOS = Set.of("@loginInvalido", "@categoriaInexistente");
-    private static final List<String> HALLAZGOS_MANUALES = List.of(
-            "En la prueba manual del checkout, la tienda indica que no hay transportista disponible "
-                    + "para la dirección de envío (paso Método de envío). Queda fuera del alcance de esta automatización.");
 
     // ===== Estilos =====
     private static final Font H1 = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 22, new Color(20, 40, 80));
@@ -243,9 +240,6 @@ public class PdfReportPlugin implements EventListener {
                 doc.add(new Paragraph("- [Esperado] " + c.title
                         + ": la automatización falló como se esperaba. Motivo: " + c.error, TXT));
             }
-        }
-        for (String h : HALLAZGOS_MANUALES) {
-            doc.add(new Paragraph("- [Observación] " + h, TXT));
         }
     }
 

@@ -201,7 +201,7 @@ public class PdfReportPlugin implements EventListener {
     private void escenario(Document doc, CaseData c) throws Exception {
         doc.newPage();
         doc.add(new Paragraph("2. Resultado: " + c.title, H2));
-        doc.add(new Paragraph("Resultado obtenido: " + c.status + "   |   Esperado: " + c.esperado()
+        doc.add(new Paragraph("Resultado obtenido:  " + c.status + "   |   Esperado: " + c.esperado()
                 + "   |   Duración: " + (c.millis / 1000.0) + " s", TXT));
         doc.add(Chunk.NEWLINE);
 
